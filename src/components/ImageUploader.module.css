@@ -1,0 +1,58 @@
+.uploader {
+  border: 2px dashed #cbd5e0;
+  border-radius: 12px;
+  padding: 4rem 3rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 250px;
+}
+
+.uploader:hover {
+  border-color: #4299e1;
+  background: #edf2f7;
+}
+
+.uploader.active {
+  border-color: #4299e1;
+  background: #bee3f8;
+  transform: scale(1.02);
+}
+
+.uploader.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.input {
+  display: none;
+}
+
+.label {
+  cursor: pointer;
+  display: block;
+}
+
+.icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.hint {
+  font-size: 0.875rem;
+  color: #718096;
+}
+

@@ -1,0 +1,43 @@
+{
+  "name": "haiorder-image-processor",
+  "version": "1.0.0",
+  "description": "AI Image Editing Automation with Next.js + NextAuth",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "generate:password": "node scripts/generate-password-hash.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.30.0",
+    "@notionhq/client": "^2.2.15",
+    "@types/archiver": "^7.0.0",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/uuid": "^10.0.0",
+    "archiver": "^7.0.1",
+    "axios": "^1.6.7",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.3",
+    "jszip": "^3.10.1",
+    "next": "^14.1.0",
+    "next-auth": "^4.24.5",
+    "openai": "^4.28.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.34.5",
+    "uuid": "^13.0.0",
+    "winston": "^3.11.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.1.0",
+    "typescript": "^5.3.3"
+  }
+}

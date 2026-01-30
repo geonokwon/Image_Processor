@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  image-processor:
+    container_name: image-processor
+    build: .
+    restart: always
+    ports:
+      - "8012:3000"
+    environment:
+      - NODE_ENV=production
+      # .env 파일을 같은 폴더에 두고 아래 env_file을 쓰거나, 
+      # 직접 여기에 환경변수를 적어도 됩니다.
+    env_file:
+      - .env
+    volumes:
+      # 중요: 컨테이너가 재시작되어도 업로드한 이미지와 결과물이 유지되도록 NAS 폴더와 연결
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+      # 프로덕션 모드에서는 빌드된 파일(.next)을 사용하므로 src 볼륨 마운트 불필요

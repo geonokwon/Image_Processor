@@ -1,0 +1,811 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.header {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 2rem;
+}
+
+.headerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.username {
+  font-size: 0.875rem;
+  color: #4a5568;
+}
+
+.logoutButton {
+  padding: 0.5rem 1rem;
+  background: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.logoutButton:hover {
+  background: #c53030;
+}
+
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.topSectionWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .topSectionWrapper {
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.topSectionWrapper .section {
+  margin-bottom: 0;
+}
+
+.uploadSection {
+  flex-shrink: 0;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.uploadSection .sectionTitle {
+  margin-bottom: 1.5rem;
+}
+
+.statusSection {
+  flex-shrink: 0;
+}
+
+.promptSection {
+  flex: 1;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+}
+
+.promptInput {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  min-height: 300px; /* 기본 높이를 더 넉넉하게 */
+  max-height: 360px; /* 너무 커지지 않도록 상한선 */
+  resize: vertical; /* 사용자가 아래로 더 늘릴 수 있음 */
+  transition: border-color 0.2s;
+}
+
+.promptInput:focus {
+  outline: none;
+  border-color: #4299e1;
+}
+
+.promptInput:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.promptPresetSection {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.promptPresetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.promptPresetLabel {
+  font-size: 0.875rem;
+  color: #718096;
+  font-weight: 500;
+  margin: 0;
+}
+
+.promptPresets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.promptPreset {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  padding-right: 2rem;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+}
+
+.promptPreset:hover:not(:disabled) {
+  border-color: #667eea;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.promptPreset:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.promptPresetEditMode {
+  cursor: default;
+  opacity: 0.8;
+}
+
+.promptPresetActive {
+  border-color: #667eea;
+  background: #edf2f7;
+  font-weight: 600;
+}
+
+.promptPresetName {
+  color: #2d3748;
+  white-space: nowrap;
+}
+
+.backgroundColorSection {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.backgroundColorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.backgroundColorLabel {
+  font-size: 0.875rem;
+  color: #718096;
+  font-weight: 500;
+  margin: 0;
+}
+
+.presetActionButtons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.addPresetButton {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #667eea;
+  border-radius: 6px;
+  background: white;
+  color: #667eea;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.addPresetButton:hover:not(:disabled) {
+  background: #667eea;
+  color: white;
+}
+
+.addPresetButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editModeButton {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #667eea;
+  border-radius: 6px;
+  background: white;
+  color: #667eea;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.editModeButton:hover:not(:disabled) {
+  background: #667eea;
+  color: white;
+}
+
+.editModeButton.editModeActive {
+  background: #667eea;
+  color: white;
+}
+
+.editModeButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.backgroundColorPresets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.backgroundColorPreset {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  padding-right: 2rem;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+}
+
+.backgroundColorPreset:hover:not(:disabled) {
+  border-color: #667eea;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.backgroundColorPreset:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 수정 모드일 때는 프리셋 버튼 클릭 비활성화 (시각적 표시) */
+.backgroundColorPresetEditMode {
+  cursor: default;
+  opacity: 0.8;
+}
+
+.backgroundColorPresetActive {
+  border-color: #667eea;
+  background: #edf2f7;
+  font-weight: 600;
+}
+
+/* X 버튼은 삭제 모드일 때만 표시되도록 JSX에서 조건부 렌더링으로 처리 */
+/* CSS에서는 기본 스타일만 정의 */
+
+.backgroundColorSwatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e0;
+  flex-shrink: 0;
+}
+
+.backgroundColorName {
+  color: #2d3748;
+  white-space: nowrap;
+}
+
+.deletePresetButton {
+  position: absolute;
+  top: -8px;
+  right: -40px;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid white;
+  border-radius: 12px;
+  background: #e53e3e;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.deletePresetButton:hover:not(:disabled) {
+  background: #c53030;
+  transform: scale(1.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.deletePresetButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editPresetButton {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid white;
+  border-radius: 12px;
+  background: #667eea;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.editPresetButton:hover:not(:disabled) {
+  background: #5568d3;
+  transform: scale(1.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.editPresetButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.noPresets {
+  color: #718096;
+  font-size: 0.875rem;
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* 모달 스타일 */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.promptPresetModalContent {
+  max-width: 700px;
+  width: 90%;
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 1.5rem 0;
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modalLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.modalInput {
+  padding: 0.5rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+.modalInput:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.modalTextarea {
+  padding: 0.5rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  resize: vertical;
+  width: 100%;
+}
+
+.modalTextarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.colorInputWrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.colorPicker {
+  width: 60px;
+  height: 40px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.colorCodeInput {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-family: monospace;
+}
+
+.colorCodeInput:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.modalActions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.modalConfirmButton,
+.modalCancelButton,
+.modalDeleteButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modalConfirmButton {
+  background: #667eea;
+  color: white;
+}
+
+.modalConfirmButton:hover {
+  background: #5568d3;
+}
+
+.modalDeleteButton {
+  background: #e53e3e;
+  color: white;
+}
+
+.modalDeleteButton:hover {
+  background: #c53030;
+}
+
+.modalCancelButton {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.modalCancelButton:hover {
+  background: #cbd5e0;
+}
+
+.qualityToggle {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggleLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.toggleText {
+  font-size: 0.875rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.toggleValue {
+  font-size: 1rem;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.toggleButton {
+  position: relative;
+  width: 56px;
+  height: 32px;
+  background: #cbd5e0;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  padding: 0;
+}
+
+.toggleButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toggleButton.toggleActive {
+  background: #667eea;
+}
+
+.toggleSlider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggleButton.toggleActive .toggleSlider {
+  transform: translateX(24px);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.processButton,
+.resetButton,
+.downloadButton {
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.processButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  flex: 1;
+}
+
+.processButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.processButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.resetButton {
+  background: #718096;
+  color: white;
+}
+
+.resetButton:hover:not(:disabled) {
+  background: #4a5568;
+}
+
+.actionButtonsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.processResetWrapper {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.processResetWrapper .processButton {
+  flex: 7;
+}
+
+.processResetWrapper .resetButton {
+  flex: 3;
+}
+
+.actionButtonsWrapper .downloadButton {
+  width: 100%;
+  margin-top: 0;
+}
+
+.downloadButton {
+  background: #48bb78;
+  color: white;
+}
+
+.downloadButton:hover:not(:disabled) {
+  background: #38a169;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+}
+
+.downloadButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.status {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.statusItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.statusLabel {
+  font-size: 0.875rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.statusValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+/* 모바일 반응형 스타일 추가 */
+@media (max-width: 640px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .headerContent {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  .headerActions {
+    width: 100%;
+    justify-content: space-between;
+    background: #f7fafc;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  }
+
+  .username {
+    font-weight: 500;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .processButton, .resetButton {
+    width: 100%;
+  }
+
+  .topSectionWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .status {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .statusItem {
+    gap: 0.25rem;
+  }
+
+  .statusLabel {
+    font-size: 0.75rem;
+  }
+
+  .statusValue {
+    font-size: 1.25rem;
+  }
+}

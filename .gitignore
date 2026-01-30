@@ -1,0 +1,28 @@
+node_modules/
+/.next/
+/out/
+*.log
+.DS_Store
+coverage/
+
+# --- Secrets / Keys / Personal (do not commit) ---
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+!.env.example
+# IDE/editor temp files that may contain env (e.g. .!77055!.env.local)
+.!*.env*
+.*.env.local
+# API keys, credentials
+*.key
+*.pem
+*credentials*.json
+*secret*.json
+*-secret*
+# Google/OpenAI etc.
+credentials.json
+service-account*.json
+*.p12
